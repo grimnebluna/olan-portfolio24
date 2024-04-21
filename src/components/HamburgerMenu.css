@@ -1,0 +1,170 @@
+/* General Styles for the Hamburger Menu Button */
+.hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 30px; /* Slightly larger to emphasize */
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1002; /* Higher z-index to ensure it's on top */
+}
+
+/* Full-screen overlay navigation menu styles */
+.nav-menu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(187, 0, 255, 0.1); /* Semi-transparent black background */
+    overflow-x: hidden;
+    transition: 0.5s; /* Smooth transition for opening and closing */
+    z-index: 1001; /* Ensures menu is above other content but below the button */
+}
+
+/* Ensuring the menu covers the entire screen when open */
+.nav-menu.open {
+    display: block;
+    background-color: rgba(0,0,0,0.9); /* Semi-transparent black background */
+    transition: 0.5s; /* Smooth transition for opening and closing */
+}
+
+/* Styling for the navigation list */
+.nav-menu ul {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+/* Styling individual items with animations */
+.nav-menu ul li {
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInMoveDown 0.5s forwards;
+    animation-delay: calc(0.1s * var(--i)); /* Animation delay based on item index */
+}
+
+/* Keyframes for link animations */
+@keyframes fadeInMoveDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Link styling */
+/* Link styling with a pseudo-element for the underline */
+.nav-menu ul li a {
+    font-size: 44px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element does not exceed the link's area */
+    transition: all 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Pseudo-element for the underline */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-code-bg); /* Underline color */
+    transition: width 0.3s;
+}
+
+/* Expanding the underline on hover */
+.nav-menu ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Hover effect for links */
+.nav-menu ul li a:hover {
+    color: var(--color-code-bg); /* Light blue color on hover */
+    /* move a bit top left */
+    transform: translate(-2px, -2px);
+    
+}
+
+
+.menu-icon-bars-wrapper {
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    position: relative;
+  }
+  
+  .menu-icon-bar {
+    z-index: 5;
+    background-color: #fff;
+
+    width: 32px;
+    height: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for smooth animation */
+    box-shadow: 0 34px 35px rgba(48, 13, 37, 0.05), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, 0.01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, 0.08);
+
+  }
+
+  .hamburger-menu:not(.active):hover .menu-icon-bar { 
+    filter:none;
+  }
+
+  .hamburger-menu:not(.active):hover .menu-icon-bar:nth-child(1) {
+
+    transform: rotate(8deg) translate(-2px, -2px); /* Rotates and moves the top bar */
+    box-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
+
+    
+  }
+  .hamburger-menu:not(.active):hover .menu-icon-bar:nth-child(2) {
+
+    transform: rotate(0deg) translate(-2px, -2px); /* Rotates and moves the top bar */
+    box-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
+
+    
+  }
+
+  .hamburger-menu:not(.active):hover .menu-icon-bar:nth-child(3) {
+
+    transform: rotate(-8deg) translate(-2px, -2px); /* Rotates and moves the top bar */
+    box-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
+
+  }
+
+/* Animations when menu is opened */
+.hamburger-menu.active .menu-icon-bar:nth-child(1) {
+    transform: rotate(35deg) translate(6px, 6px); /* Rotates and moves the top bar */
+}
+
+.hamburger-menu.active .menu-icon-bar:nth-child(2) {
+    transform: rotate(90deg) translate(0, -2px); /* Rotates and moves the top bar */
+}
+
+.hamburger-menu.active .menu-icon-bar:nth-child(3) {
+    transform: rotate(-35deg) translate(6px, -5px); /* Rotates and moves the bottom bar */
+}

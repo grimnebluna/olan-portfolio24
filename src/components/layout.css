@@ -1,17 +1,18 @@
 :root {
   --border-radius: 4px;
-  --color-text: #333;
+  --color-text: #ffffff;
   --color-primary: #7026b9;
-  --color-code-bg: #fff4db;
+  --color-secondary: #3498db;
+  --color-tertiary: ##e6baff;
+  --color-code-bg: #d894ff;
   --color-code: #8a6534;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans: "Superia";
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --font-lg: 18px;
-  --font-md: 16px;
-  --font-sm: 14px;
-  --font-sx: 12px;
+  --font-lg: 24px;
+  --font-md: 22px;
+  --font-sm: 18px;
+  --font-sx: 14px;
   --line-height-loose: 1.75;
   --line-height-normal: 1.5;
   --line-height-dense: 1.1;
@@ -24,7 +25,61 @@
   --size-content: 54rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
+  --breakpoint-sm: 768px;
 }
+
+
+@font-face {
+  font-family: 'Superia';
+  src: url('../fonts/SuperiaBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Superia';
+  src: url('../fonts/Superia.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Superia';
+  src: url('../fonts/SuperiaDemibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Superia';
+  src: url('../fonts/SuperiaBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+  background: var(--color-code-bg);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+  background: var(--color-text);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+  }
+  
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -42,7 +97,257 @@ body {
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
+  background-color: var(--color-code-bg);
+  overflow: auto;
+  -webkit-text-stroke-color: rgba(227, 174, 227, .4);
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
 }
+
+
+
+@keyframes fadeOverlay1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeOverlay2 {
+  0%, 12.5%, 100% { opacity: 0; }
+  25%, 87.5% { opacity: 1; }
+}
+
+@keyframes fadeOverlay3 {
+  0%, 25%, 100% { opacity: 0; }
+  37.5%, 75% { opacity: 1; }
+}
+
+@keyframes fadeOverlay4 {
+  0%, 37.5%, 100% { opacity: 0; }
+  50%, 62.5% { opacity: 1; }
+}
+
+@keyframes fadeOverlay5 {
+  0%, 50%, 100% { opacity: 0; }
+  62.5%, 87.5% { opacity: 0.8; }
+}
+
+
+@keyframes fadeOverlay25 {
+  25%, 75% { opacity: 0; }
+  0%, 50%, 100% { opacity: 0.4; }
+}
+
+@keyframes fadeOverlay45 {
+  0%, 50%, 100% { opacity: 0.05; }
+  25%, 75% { opacity: 0.20; }
+}
+
+
+.overlay-1 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/bg_mesh_gradient_4.jpeg");
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay1;
+}
+
+.overlay-2 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/bg_mesh_gradient_3.jpeg");
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay2;
+}
+
+
+.overlay-25 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/olanfoto1.jpg");
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 72s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay25;
+}
+
+.overlay-3 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/bg_mesh_gradient_2.jpeg");
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay3;
+}
+
+.overlay-4 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/bg_mesh_gradient_1.jpeg");
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay4;
+}
+
+.overlay-45 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/olanfoto2.jpg");
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 72s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay45;
+}
+
+
+.overlay-5 {
+  z-index: 5;
+  background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/bg_mesh_gradient_5.jpeg"); 
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: fadeOverlay5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.social-link {
+  display: inline-block;
+  margin-right: var(--space-2);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: bold;
+  height:auto;
+  padding: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  box-shadow: 0 34px 35px rgba(48, 13, 37, 0), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, 0), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, 0);
+
+}
+.social-link .gatsby-image-wrapper {
+  max-width: 40px;
+  height:auto;
+  filter: invert(54%) sepia(54%) saturate(805%) hue-rotate(218deg) brightness(144%) contrast(106%);
+
+
+}
+
+
+.social-link:hover {
+  background-color:  var(--color-code-bg);
+  box-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
+  /* transform a bit top left */
+  transform: translate(-3px, -3px);
+}
+.social-link:hover .gatsby-image-wrapper {
+  filter: none;
+}
+
+
+
+.social-links-wrapper {
+
+  top: 14px;
+  left: 18px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  position:fixed;
+  
+}
+
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 7;
+  width: 100%;
+
+
+}
+
+.menu {
+  display:none;
+  position:fixed;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+}
+
+
 a {
   background-color: transparent;
   color: var(--color-primary);
@@ -221,4 +526,68 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: none;
+}
+
+
+
+a {
+  position: relative;
+  text-decoration: none; /* Remove the default underline */
+  color: var(--color-tertiary);
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  bottom: 0;
+  left: 50%;
+  background-color: #fff;
+  transition: width 0.3s ease, left 0.3s ease; /* Transition for the underline */
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+a:hover {
+  color: #fff; /* Change color on hover */
+}
+
+
+.oz-wrapper-content {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.contentdiv {
+  width: 100%;
+  margin-bottom:35px;
+  h2 {
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+  .dateTitle {
+    margin-bottom:5px;
+    font-weight:700;
+    font-size:var(--font-lg);
+  }
+  .dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+  }
+}
+.oz-wrapper-content:nth-child(2) {
+  margin-top:50px;
+}
+
+.dateContainer {
+  margin-bottom:30px;
 }
