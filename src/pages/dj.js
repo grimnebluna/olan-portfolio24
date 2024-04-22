@@ -10,14 +10,11 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 
-const SecondPage = ({ data }) => (
+const djPage = ({ data }) => (
   <Layout>
-
+    <div className={styles.mainNormal}>
       <div className="oz-wrapper-content">
-        <div className="contentdiv">
-          <h2 className={styles.h2heading}>DJ</h2>
-
-        </div>
+        
         <div className="contentdiv">
           <h2 className={styles.h2heading}>Dates</h2>
 
@@ -52,16 +49,60 @@ const SecondPage = ({ data }) => (
 
       </div>
       <div className="contentdiv">
-          <h2 className={styles.h2heading}>Producer</h2>
+          <h2 className={styles.h2heading}>DJ</h2>
+        {data.allWpContentEmbed.edges.map(({node}) => (
 
+          node.embedFelder.place == "dj" && (
+           
+           <div key={node.id} role="listitem" className="embedElem">
+               <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
+          </div>
+
+          )
+          
+
+      ))} 
+
+          <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank">more stuff on Soundcloud</a></p>
+
+        </div>
+      <div className="contentdiv">
+          <h2 className={styles.h2heading}>Producer</h2>
+          {data.allWpContentEmbed.edges.map(({node}) => (
+
+            node.embedFelder.place == "producer" && (
+            
+            <div key={node.id} role="listitem" className="embedElem">
+                <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
+            </div>
+
+            )
+
+
+            ))} 
+
+        <p style={{marginTop: "20px"}}><a href="https://olan1.bandcamp.com" target="_blank">more stuff on Bandcamp</a></p>
         </div>
         <div className="contentdiv">
           <h2 className={styles.h2heading}>Live Sets</h2>
+          {data.allWpContentEmbed.edges.map(({node}) => (
 
+            node.embedFelder.place == "livesets" && (
+            
+            <div key={node.id} role="listitem" className="embedElem">
+                <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
+            </div>
+
+            )
+
+
+            ))} 
+
+        <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank">more stuff on Soundcloud</a></p>
         </div>
       </div>
 
-
+    </div>
   </Layout>
 )
 
@@ -83,7 +124,19 @@ query  {
       }
     }
   }
+  allWpContentEmbed {
+    edges {
+      node {
+        id
+        embedFelder {
+          datum
+          embedcode
+          place
+        }
+      }
+    }
+  }
 }
 `
 
-export default SecondPage
+export default djPage

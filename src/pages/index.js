@@ -40,6 +40,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => (
   <Layout>
+    <div className={styles.mainCenter}>
     <div className={styles.textCenter}>
       <h1 className={styles.mainTitle}>Olan!</h1>
       <h2 className={styles.subTitle}>Olivier Zurkirchen</h2>
@@ -77,6 +78,7 @@ const IndexPage = () => (
       ))}
     </ul>
     */}
+    </div>
   </Layout>
 )
 

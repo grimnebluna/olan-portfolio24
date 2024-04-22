@@ -101,9 +101,14 @@ body {
   overflow: auto;
   -webkit-text-stroke-color: rgba(227, 174, 227, .4);
   -webkit-text-stroke-width: 1px;
-  text-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
 }
 
+h1, h2, h3, a {
+  -webkit-text-stroke-color: rgba(227, 174, 227, .4);
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
+
+}
 
 
 @keyframes fadeOverlay1 {
@@ -149,7 +154,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -166,7 +171,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -184,7 +189,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -201,7 +206,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -218,7 +223,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -235,7 +240,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -253,7 +258,7 @@ body {
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  position: absolute;
+  position: fixed;
   top: 0%;
   bottom: 0%;
   left: 0%;
@@ -535,6 +540,11 @@ a {
   text-decoration: none; /* Remove the default underline */
   color: var(--color-tertiary);
   transition: color 0.3s; /* Smooth color transition */
+
+  text-shadow: none;
+  -webkit-text-stroke-color: rgba(156, 172, 255, 0.4);
+
+
 }
 
 a::after {
@@ -544,34 +554,53 @@ a::after {
   height: 2px; /* Thickness of the underline */
   bottom: 0;
   left: 50%;
-  background-color: #fff;
+  background-color: rgba(200, 200, 255, 1);
   transition: width 0.3s ease, left 0.3s ease; /* Transition for the underline */
 }
 
-a:hover::after {
+a:not(.social-link):hover::after {
   width: 100%;
   left: 0;
 }
 
 a:hover {
-  color: #fff; /* Change color on hover */
+  color:  rgba(200, 200, 255, 1);
 }
 
-
-.oz-wrapper-content {
+.oz-wrapper-content, .contenZweispaltig {
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 120px;
 }
 
+@media (max-width: 1280px) {
+  .oz-wrapper-content, .contenZweispaltig {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .oz-wrapper-content, .contenZweispaltig {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .oz-wrapper-content, .contenZweispaltig {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+h2 {
+  margin-top:0px;
+  margin-bottom:0px;
+}
 .contentdiv {
   width: 100%;
-  margin-bottom:35px;
-  h2 {
-    margin-top:0px;
-    margin-bottom:0px;
-  }
+
   .dateTitle {
     margin-bottom:5px;
     font-weight:700;
@@ -590,4 +619,19 @@ a:hover {
 
 .dateContainer {
   margin-bottom:30px;
+}
+
+.embedElem {
+  width: 100%;
+  opacity:0.5;
+  transition: all 0.4s ease;
+}
+.embedElem:hover {
+  opacity:1;
+}
+
+
+.zweispaltigWrapper {
+
+  grid-column: span 2; /* Span across 2 columns */
 }

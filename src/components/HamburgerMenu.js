@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './HamburgerMenu.css'; // Import your CSS styles
-
+import { Link } from "gatsby";
 
 const links = [
     {
@@ -23,19 +23,13 @@ const links = [
     },
     {
       text: "Mixing + Mastering",
-      url: "https://www.gatsbyjs.com/cloud",
+      url: "/mix-master",
       description:
         "",
     },
     {
-      text: "Vita",
+      text: "About + Contact",
       url: "/vita",
-      description:
-        "",
-    },
-    {
-      text: "Contact",
-      url: "/contact",
       description:
         "",
     },
@@ -64,7 +58,7 @@ const HamburgerMenu = () => {
                 <ul>
                 {links.map((link, index) => (
                 <li key={link.text} style={{ '--i': index + 1 }}>
-                    <a href={link.url}>{link.text}</a>
+                   <Link to={link.url} activeClassName="active-link">{link.text}</Link>
                 </li>
             ))}
                 </ul>

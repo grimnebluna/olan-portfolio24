@@ -76,29 +76,35 @@
     position: relative;
     overflow: hidden; /* Ensures the pseudo-element does not exceed the link's area */
     transition: all 0.3s; /* Smooth transition for hover effects */
+    -webkit-text-stroke-color: rgba(227, 174, 227, .7);
+    -webkit-text-stroke-width: 1px;
+    text-shadow: 0 34px 35px rgba(48, 13, 37, .09), 0 77px 46px rgba(48, 13, 37, .05), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .25);
+  
 }
 
 /* Pseudo-element for the underline */
 .nav-menu ul li a::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 50%;          /* Start from the center */
     bottom: 0;
-    width: 0;
+    width: 100%;        /* Full width but initially scaled down */
     height: 2px;
     background-color: var(--color-code-bg); /* Underline color */
-    transition: width 0.3s;
+    transition: transform 0.3s; /* Animate the transform property */
+    transform: scaleX(0); /* Scale down to 0 width initially */
+    transform-origin: center; /* Scaling from the center */
 }
 
 /* Expanding the underline on hover */
 .nav-menu ul li a:hover::after {
-    width: 100%;
+    transform: scaleX(1); /* Scale to full width on hover */
 }
-
 
 /* Hover effect for links */
 .nav-menu ul li a:hover {
     color: var(--color-code-bg); /* Light blue color on hover */
+    color:#3498db;
     /* move a bit top left */
     transform: translate(-2px, -2px);
     
@@ -167,4 +173,10 @@
 
 .hamburger-menu.active .menu-icon-bar:nth-child(3) {
     transform: rotate(-35deg) translate(6px, -5px); /* Rotates and moves the bottom bar */
+}
+
+
+a.active-link {
+    color: var(--color-code-bg) !important; /* Change the color to indicate active state */
+    font-weight: bold; /* Optional: make it bold */
 }
