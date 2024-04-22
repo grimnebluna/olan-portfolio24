@@ -17,10 +17,9 @@ const vitaPage = ({ data }) => (
         
         <div className="contentdiv">
           <h2 className={styles.h2heading}>About</h2>
-            {/* embed disco again but with nl2br */}
-            {data.wpPage.aboutcontact.about.split("\n").map((i,key) => {
-              return <div key={key}>{i}<br/></div>
-            })}
+
+           {/* instead of the nl trick, use dangerouslySetInnerHTML */}
+            <div dangerouslySetInnerHTML={{ __html: data.wpPage.aboutcontact.about }} />
 
 
 
@@ -33,9 +32,8 @@ const vitaPage = ({ data }) => (
       <div className="contentdiv">
 
       <h2 className={styles.h2heading}>Contact</h2>
-      {data.wpPage.aboutcontact.contact.split("\n").map((i,key) => {
-              return <div key={key}>{i}<br/></div>
-            })}
+      
+      <div dangerouslySetInnerHTML={{ __html: data.wpPage.aboutcontact.contact }} />
 
         </div>
         <div className="contentdiv">

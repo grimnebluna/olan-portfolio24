@@ -32,28 +32,28 @@
 @font-face {
   font-family: 'Superia';
   src: url('../fonts/SuperiaBlack.ttf') format('truetype');
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Superia';
   src: url('../fonts/Superia.ttf') format('truetype');
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Superia';
   src: url('../fonts/SuperiaDemibold.ttf') format('truetype');
-  font-weight: 600;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Superia';
   src: url('../fonts/SuperiaBold.ttf') format('truetype');
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
