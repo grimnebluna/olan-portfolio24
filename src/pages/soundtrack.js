@@ -1,10 +1,6 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 
-// import functions to work with dates and date formats:
-import { format, parseISO } from "date-fns"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -15,7 +11,7 @@ const soundtrackPage = ({ data }) => (
     <div className={styles.mainNormal}>
       <div className="oz-wrapper-content">
         
-        <div className="contentdiv">
+        <div className="zweispaltigWrapper">
           <h2 className={styles.h2heading}>Soundtracks</h2>
             {/* embed disco again but with nl2br */}
             {data.wpPage.soundtrack.soundtracktext.split("\n").map((i,key) => {
@@ -26,10 +22,6 @@ const soundtrackPage = ({ data }) => (
 
 
       </div>
-      <div className="contentdiv">
-
-
-        </div>
       <div className="contentdiv">
 
       <h2 className={styles.h2heading}>Theater</h2>
@@ -69,7 +61,7 @@ const soundtrackPage = ({ data }) => (
   </Layout>
 )
 
-export const Head = () => <Seo title="Page two" />
+export const Head = () => <Seo title="Theater + Film Music | Olan!" />
 
 export const query = graphql`
 query  {

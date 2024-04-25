@@ -29,16 +29,15 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div className={styles.mainContainer}>
         <main className={styles.mainWrapper}>{children}</main>
-        {/*
+        
         <footer
           style={{
-            marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
+            zIndex: 1000,
+            color: `#eba0ff`
           }}
-        >
-         
-        </footer>
-        */}
+        >&nbsp;Olan!</footer>
+        
       </div>
 
       <div className="overlay-1"></div>

@@ -120,6 +120,7 @@
     height: 100px;
     display: flex;
     position: relative;
+    z-index:1200;
   }
   
   .menu-icon-bar {

@@ -1,10 +1,6 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 
-// import functions to work with dates and date formats:
-import { format, parseISO } from "date-fns"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -16,7 +12,7 @@ const releasesPage = ({ data }) => (
       <div className="oz-wrapper-content">
         <div className="zweispaltigWrapper">
       <h2 className={styles.h2heading}>Recent Releases</h2>
-        <div className="contenZweispaltig">
+        <div className="contenZweispaltigNoGap">
         {data.allWpContentEmbed.edges.map(({node}) => (
 
               node.embedFelder.place == "releases" && (
@@ -32,7 +28,8 @@ const releasesPage = ({ data }) => (
 
 
       </div>
-        <p style={{marginTop: "20px"}}><a href="https://olan1.bandcamp.com" target="_blank">more stuff on Bandcamp</a></p>
+        <p style={{marginTop: "20px", marginBottom: "0px"}}><a href="https://olan1.bandcamp.com" target="_blank">more stuff on Bandcamp</a></p>
+        <p><a href="https://0x01.space/releases" target="_blank">more info on 0x01.space</a></p>
 
         </div>
 
@@ -56,7 +53,7 @@ const releasesPage = ({ data }) => (
   </Layout>
 )
 
-export const Head = () => <Seo title="Page two" />
+export const Head = () => <Seo title="Releases + Discography | Olan!" />
 
 export const query = graphql`
 query  {
