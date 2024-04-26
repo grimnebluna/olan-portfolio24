@@ -12,13 +12,9 @@ const soundtrackPage = ({ data }) => (
       <div className="oz-wrapper-content">
         
         <div className="zweispaltigWrapper">
-          <h2 className={styles.h2heading}>Soundtracks</h2>
+          <h2 className={styles.h2heading}>Scores</h2>
             {/* embed disco again but with nl2br */}
-            {data.wpPage.soundtrack.soundtracktext.split("\n").map((i,key) => {
-              return <div key={key}>{i}<br/></div>
-            })}
-
-
+                   <div dangerouslySetInnerHTML={{ __html: data.wpPage.soundtrack.soundtracktext }} />
 
 
       </div>

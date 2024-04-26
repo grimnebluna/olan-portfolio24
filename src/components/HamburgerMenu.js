@@ -17,7 +17,7 @@ const links = [
     },
     {
       text: "Theater + Film Music",
-      url: "/soundtrack",
+      url: "/scores",
       description:
         "",
     },

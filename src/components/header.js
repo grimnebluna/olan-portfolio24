@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
           alt=""
         />
       </a>
-    <a href="https://ext/" target="_blank" className="social-link w-inline-block">
+    <a href="https://olan1.bandcamp.com/" target="_blank" className="social-link w-inline-block">
     <StaticImage
         src="../images/bandcamp.svg"
         loading="eager"
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
     </a>
-    <a href="https://ext/" target="_blank" className="social-link w-inline-block">
+    <a href="https://soundcloud.com/olangalactica" target="_blank" className="social-link w-inline-block">
     <StaticImage
         src="../images/soundcloud.svg"
         loading="eager"
@@ -38,7 +38,7 @@ const Header = ({ siteTitle }) => (
         alt=""
       />        
     </a>
-     <a href="https://ext/" target="_blank" className="social-link w-inline-block">
+     <a href="https://instagram.com/olangalactica" target="_blank" className="social-link w-inline-block">
      <StaticImage
         src="../images/instagram.svg"
         loading="eager"
@@ -48,7 +48,7 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
      </a>
-     <a href="https://ext/" target="_blank" className="social-link w-inline-block">
+     <a href="https://www.youtube.com/olangalactica" target="_blank" className="social-link w-inline-block">
      <StaticImage
         src="../images/youtube.svg"
         loading="eager"
@@ -58,7 +58,7 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
      </a>
-     <a href="https://ext/" target="_blank" className="social-link w-inline-block">
+     <a href="https://facebook.com/olangalactica" target="_blank" className="social-link w-inline-block">
      <StaticImage
         src="../images/facebook.svg"
         loading="eager"

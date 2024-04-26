@@ -577,7 +577,13 @@ pre tt:after {
   content: none;
 }
 
+p {
+  max-width:none;
+}
 
+.zweispaltigWrapper p {
+  max-width:900px;
+}
 
 a {
   position: relative;
