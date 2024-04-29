@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
             zIndex: 1000,
             color: `#eba0ff`
           }}
-        >&nbsp;Olan!</footer>
+        >&nbsp;<a href="/">Olan!</a></footer>
         
       </div>
 

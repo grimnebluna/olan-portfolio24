@@ -13,6 +13,7 @@
   --font-md: 22px;
   --font-sm: 18px;
   --font-sx: 14px;
+  --font-sxx: 11px;
   --line-height-loose: 1.75;
   --line-height-normal: 1.5;
   --line-height-dense: 1.1;
@@ -147,7 +148,10 @@ h1, h2, h3, a {
   25%, 75% { opacity: 0.20; }
 }
 
-
+p, a, h1, h2 {
+  hyphens: auto;;
+  word-break: break-word;
+}
 .overlay-1 {
   z-index: 5;
   background-image: linear-gradient(135deg, rgba(237, 66, 100, .2), rgba(202, 179, 116, .5)), url("../images/bg_mesh_gradient_4.jpeg");
@@ -326,6 +330,13 @@ h1, h2, h3, a {
   align-items: center;
   position:fixed;
   
+}
+@media (max-width: 570px) {
+  .social-links-wrapper {
+    display: flex;
+    justify-content: center;
+    width:100%;
+  }
 }
 
 footer { 
@@ -584,6 +595,94 @@ p {
 .zweispaltigWrapper p {
   max-width:900px;
 }
+.linktreeWrapper {
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+.linktreeWrapper .linkInner {
+  max-width:700px;
+  width:100%;
+}
+
+a.linkContainer {
+  border-radius: 10px;
+  display:block;
+  width:100%;
+  background-color:rgba(156, 68, 238, 0.354);
+  margin-bottom:30px;
+  transition: all 0.4s ease;    
+  display: grid;
+  grid-template-columns: 0.25fr 1.75fr;
+}
+@media (max-width: 740px) {
+  a.linkContainer {
+    grid-template-columns: 0.5fr 1.5fr;
+  }
+}
+
+@media (max-width: 520px) {
+  a.linkContainer .dateTitle {
+    font-size: var(--font-md);
+  }
+}
+
+@media (max-width: 480px) {
+  a.linkContainer .dateTitle {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 420px) {
+  a.linkContainer .dateTitle {
+    font-size: var(--font-sx);
+  }
+}
+
+@media (max-width: 340px) {
+  a.linkContainer {
+    grid-template-columns: 0.35fr 1.65fr;
+  }
+  a.linkContainer .dateTitle {
+    font-size: var(--font-sxx);
+  }
+}
+a.linkContainer .dateImage img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius:10px;
+}
+a.linkContainer .dateTitle {
+  padding-left:20px;
+  padding-right:20px;
+
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  transform: translateY(5px);
+  line-height: 26px;
+
+ /* color:  rgba(200, 200, 255, 1); */
+}
+a.linkContainer .dateImage {
+  display: flex;
+
+}
+a.linkContainer:hover .dateTitle {
+ /* color: var(--color-primary); */
+
+}
+a.linkContainer:hover {
+
+  transform: scale(1.02);
+
+  background-color:rgba(156, 68, 238, 1);
+  box-shadow: 0 34px 35px rgba(48, 13, 37, .06), 0 77px 46px rgba(48, 13, 37, .03), 0 130px 55px rgba(0, 0, 0, .01), 0 214px 60px rgba(48, 13, 37, 0), 0 4px 4px rgba(0, 0, 0, .10);
+
+}
 
 a {
   position: relative;
@@ -608,7 +707,7 @@ a::after {
   transition: width 0.3s ease, left 0.3s ease; /* Transition for the underline */
 }
 
-a:not(.social-link):hover::after {
+a:not(.social-link):not(.linkContainer):hover::after {
   width: 100%;
   left: 0;
 }

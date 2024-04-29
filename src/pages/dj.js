@@ -122,7 +122,16 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
         <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank">more stuff on Soundcloud</a></p>
         </div>
+
       </div>
+
+
+
+      <div className="zweispaltigWrapper">
+          <h2 className={styles.h2heading}>Gig History</h2>
+            <div dangerouslySetInnerHTML={{ __html: data.wpPage.historygigs.history }} />
+      </div>
+
 
     </div>
   </Layout>
@@ -157,6 +166,12 @@ query  {
           place
         }
       }
+    }
+  }
+  wpPage(slug: {eq: "gighistory"}) {
+    historygigs {
+      history
+
     }
   }
 }

@@ -8,6 +8,7 @@ const Header = ({ siteTitle }) => (
 
 
 <div className="social-links-wrapper">
+  {/*
   <a href="/" className="social-link w-inline-block">
       <StaticImage
           src="../images/home.svg"
@@ -18,6 +19,7 @@ const Header = ({ siteTitle }) => (
           alt=""
         />
       </a>
+*/}
     <a href="https://olan1.bandcamp.com/" target="_blank" className="social-link w-inline-block">
     <StaticImage
         src="../images/bandcamp.svg"
