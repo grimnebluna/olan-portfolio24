@@ -8,7 +8,7 @@ import * as styles from "../components/index.module.css"
 const mixmasterPage = ({ data }) => (
   <Layout>
     <div className={styles.mainNormal}>
-      <h2 className={styles.h2heading}>Mixing and mastering services</h2>
+      <h2 className={styles.h2heading}>Mixing and Mastering Services</h2>
       <div className="oz-wrapper-content">
         
         <div className="contentdiv">

@@ -13,7 +13,11 @@ const releasesPage = ({ data }) => (
         <div className="zweispaltigWrapper">
       <h2 className={styles.h2heading}>Recent Releases</h2>
         <div className="contenZweispaltigNoGap">
-        {data.allWpContentEmbed.edges.map(({node}) => (
+        {data.allWpContentEmbed.edges.sort((a, b) => {
+                // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
+                // Convert to date objects if needed, or handle your specific format
+                return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
+              }).map(({node}) => (
 
               node.embedFelder.place == "releases" && (
                

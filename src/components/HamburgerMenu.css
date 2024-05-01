@@ -82,6 +82,28 @@
   
 }
 
+@media (max-width: 768px) {
+
+.nav-menu ul li a {
+    font-size:36px;
+}
+}
+
+@media (max-width: 480px) {
+
+.nav-menu ul li a {
+    font-size:30px;
+}
+}
+
+@media (max-width: 380px) {
+
+.nav-menu ul li a {
+    font-size:26px;
+}
+}
+
+
 /* Pseudo-element for the underline */
 .nav-menu ul li a::after {
     content: '';

@@ -21,7 +21,11 @@ const soundtrackPage = ({ data }) => (
       <div className="contentdiv">
 
       <h2 className={styles.h2heading}>Theater</h2>
-        {data.allWpContentEmbed.edges.map(({node}) => (
+        {data.allWpContentEmbed.edges.sort((a, b) => {
+                // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
+                // Convert to date objects if needed, or handle your specific format
+                return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
+              }).map(({node}) => (
 
           node.embedFelder.place == "theater" && (
            
@@ -37,7 +41,11 @@ const soundtrackPage = ({ data }) => (
         </div>
         <div className="contentdiv">
           <h2 className={styles.h2heading}>Film</h2>
-          {data.allWpContentEmbed.edges.map(({node}) => (
+          {data.allWpContentEmbed.edges.sort((a, b) => {
+                // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
+                // Convert to date objects if needed, or handle your specific format
+                return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
+              }).map(({node}) => (
 
             node.embedFelder.place == "film" && (
             

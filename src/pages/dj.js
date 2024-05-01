@@ -72,7 +72,11 @@ const filteredAndSortedGigs = data.allWpGig.edges
       </div>
       <div className="contentdiv">
           <h2 className={styles.h2heading}>DJ</h2>
-        {data.allWpContentEmbed.edges.map(({node}) => (
+        {data.allWpContentEmbed.edges.sort((a, b) => {
+                // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
+                // Convert to date objects if needed, or handle your specific format
+                return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
+              }).map(({node}) => (
 
           node.embedFelder.place == "dj" && (
            
@@ -90,7 +94,11 @@ const filteredAndSortedGigs = data.allWpGig.edges
         </div>
       <div className="contentdiv">
           <h2 className={styles.h2heading}>Producer</h2>
-          {data.allWpContentEmbed.edges.map(({node}) => (
+          {data.allWpContentEmbed.edges.sort((a, b) => {
+                // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
+                // Convert to date objects if needed, or handle your specific format
+                return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
+              }).map(({node}) => (
 
             node.embedFelder.place == "producer" && (
             
@@ -107,7 +115,11 @@ const filteredAndSortedGigs = data.allWpGig.edges
         </div>
         <div className="contentdiv">
           <h2 className={styles.h2heading}>Live Sets</h2>
-          {data.allWpContentEmbed.edges.map(({node}) => (
+          {data.allWpContentEmbed.edges.sort((a, b) => {
+                // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
+                // Convert to date objects if needed, or handle your specific format
+                return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
+              }).map(({node}) => (
 
             node.embedFelder.place == "livesets" && (
             
