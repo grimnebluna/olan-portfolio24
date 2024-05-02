@@ -2,8 +2,6 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-// import functions to work with dates and date formats:
-import { format, parseISO } from "date-fns"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"

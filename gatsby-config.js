@@ -9,16 +9,22 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Olan! DJ, Live Act, Producer`,
+    description: `Welcome to my portfolio`,
+    author: `@olangalactica`,
+    siteUrl: `https://www.olan.tech/`,
   },
   plugins: [
     {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "https://content.olan.tech/graphql",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // Add any options here
       },
     },
     `gatsby-plugin-image`,
