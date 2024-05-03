@@ -14,7 +14,7 @@ const soundtrackPage = ({ data }) => (
         <div className="zweispaltigWrapper">
           <h2 className={styles.h2heading}>Scores</h2>
             {/* embed disco again but with nl2br */}
-                   <div dangerouslySetInnerHTML={{ __html: data.wpPage.soundtrack.soundtracktext }} />
+                   <div className="contentdiv" dangerouslySetInnerHTML={{ __html: data.wpPage.soundtrack.soundtracktext }} />
 
 
       </div>
