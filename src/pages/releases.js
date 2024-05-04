@@ -11,6 +11,7 @@ const releasesPage = ({ data }) => (
     <div className={styles.mainNormal}>
       <div className="oz-wrapper-content">
         <div className="zweispaltigWrapper">
+          {/* Releases TODO */}
       <h2 className={styles.h2heading}>Recent Releases</h2>
         <div className="contenZweispaltigNoGap">
         {data.allWpContentEmbed.edges.sort((a, b) => {
@@ -19,7 +20,7 @@ const releasesPage = ({ data }) => (
                 return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
               }).map(({node}) => (
 
-              node.embedFelder.place == "releases" && (
+              node.embedFelder.place.toString() === "releases" && (
                
                <div key={node.id} role="listitem" className="embedElem">
                    <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -32,13 +33,14 @@ const releasesPage = ({ data }) => (
 
 
       </div>
-        <p style={{marginTop: "20px", marginBottom: "0px"}}><a href="https://olan1.bandcamp.com" target="_blank">more stuff on Bandcamp</a></p>
-        <p><a href="https://0x01.space/releases" target="_blank">more info on 0x01.space</a></p>
+        <p style={{marginTop: "20px", marginBottom: "0px"}}><a href="https://olan1.bandcamp.com" target="_blank" rel="noopener">more stuff on Bandcamp</a></p>
+        <p><a href="https://0x01.space/releases" target="_blank" rel="noopener">more info on 0x01.space</a></p>
 
         </div>
 
+            {/* Full Discography */}
         <div className="zweispaltigWrapper">
-            <h2 className={styles.h2heading}>Full Discography</h2>
+            <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
             <div className="content">
 
               
@@ -74,6 +76,7 @@ query  {
     }
   }
   wpPage(slug: {eq: "discography"}) {
+    title
     discography {
       disco
     }

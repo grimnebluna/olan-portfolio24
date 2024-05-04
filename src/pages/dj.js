@@ -43,6 +43,8 @@ const filteredAndSortedGigs = data.allWpGig.edges
       <div className="oz-wrapper-content">
         
         <div className="contentdiv">
+
+          {/* todo */}
           <h2 className={styles.h2heading}>Dates</h2>
 
 
@@ -55,7 +57,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
       <div key={node.id} role="listitem" className="dateContainer">
         <div className="dateTitle">
           {node.konzertfelder.linkurl ? (
-            <a href={node.konzertfelder.linkurl} target="_blank">{node.title}</a>
+            <a href={node.konzertfelder.linkurl} target="_blank" rel="noopener">{node.title}</a>
           ) : (
             <div>{node.title}</div>
           )}
@@ -71,6 +73,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
       </div>
       <div className="contentdiv">
+          {/* todo */}
           <h2 className={styles.h2heading}>DJ</h2>
         {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
@@ -78,7 +81,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
                 return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
               }).map(({node}) => (
 
-          node.embedFelder.place == "dj" && (
+          node.embedFelder.place.toString() === "dj" && (
            
            <div key={node.id} role="listitem" className="embedElem">
                <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -89,10 +92,11 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
       ))} 
 
-          <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank">more stuff on Soundcloud</a></p>
+          <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">more stuff on Soundcloud</a></p>
 
         </div>
       <div className="contentdiv">
+          {/* todo */}
           <h2 className={styles.h2heading}>Producer</h2>
           {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
@@ -100,7 +104,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
                 return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
               }).map(({node}) => (
 
-            node.embedFelder.place == "producer" && (
+            node.embedFelder.place.toString() === "producer" && (
             
             <div key={node.id} role="listitem" className="embedElem">
                 <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -111,9 +115,10 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
             ))} 
 
-        <p style={{marginTop: "20px"}}><a href="https://olan1.bandcamp.com" target="_blank">more stuff on Bandcamp</a></p>
+        <p style={{marginTop: "20px"}}><a href="https://olan1.bandcamp.com" target="_blank" rel="noopener">more stuff on Bandcamp</a></p>
         </div>
         <div className="contentdiv">
+          {/* todo */}
           <h2 className={styles.h2heading}>Live Sets</h2>
           {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
@@ -121,7 +126,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
                 return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
               }).map(({node}) => (
 
-            node.embedFelder.place == "livesets" && (
+            node.embedFelder.place.toString() === "livesets" && (
             
             <div key={node.id} role="listitem" className="embedElem">
                 <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -132,7 +137,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
             ))} 
 
-        <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank">more stuff on Soundcloud</a></p>
+        <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">more stuff on Soundcloud</a></p>
         </div>
 
       </div>
@@ -140,7 +145,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
 
       <div className="zweispaltigWrapper">
-          <h2 className={styles.h2heading}>Gig History</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
             <div dangerouslySetInnerHTML={{ __html: data.wpPage.historygigs.history }} />
       </div>
 
@@ -181,6 +186,7 @@ query  {
     }
   }
   wpPage(slug: {eq: "gighistory"}) {
+    title
     historygigs {
       history
 

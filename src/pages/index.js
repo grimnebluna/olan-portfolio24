@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -33,15 +34,15 @@ const links = [
 ]
 */
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+/* const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter` */
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <div className={styles.mainCenter}>
     <div className={styles.textCenter}>
-      <h1 className={styles.mainTitle}>Olan!</h1>
-      <h2 className={styles.subTitle}>Olivier Zurkirchen</h2>
-      <h2 className={styles.subSubTitle}>Zurich, CH</h2>
+      <h1 className={styles.mainTitle}>{data.wpPage.title}</h1>
+      <h2 className={styles.subTitle}>{data.wpPage.index.subtitle}</h2>
+      <h2 className={styles.subSubTitle}>{data.wpPage.index.subsubtitle}</h2>
       {/*
       <StaticImage
         src="../images/example.png"
@@ -86,5 +87,16 @@ const IndexPage = () => (
  */
 export const Head = () => <Seo title="Home | Olan!" />
 
+export const query = graphql`
+query  {
+  wpPage(slug: {eq: "index"}) {
+    title
+    index {
+      subsubtitle
+      subtitle
+    }
+  }
+}
+`
 
 export default IndexPage

@@ -14,9 +14,9 @@ const bubblesPage = ({ data }) => (
         
         <div className="contentdiv">
           <h2 className={styles.h2heading}>Bubbbbbles #1</h2>
-          <p>Sat. 25th May 2024, <a href="https://cafete.ch/" target="_blank">Cafete Reitschule Bern</a></p>
-          <p><a href="https://soundcloud.com/olangalactica" target="_blank">Olan!</a> [0x01- ZH]</p>
-          <p><a href="https://soundcloud.com/polarstella" target="_blank">stellab</a> b2b <a href="https://soundcloud.com/g-rtz-1" target="_blank">zogreth</a> [<a href="https://www.instagram.com/vierzmr_" target="_blank">vierzmr</a> - ZH]</p>
+          <p>Sat. 25th May 2024, <a href="https://cafete.ch/" target="_blank" rel="noopener">Cafete Reitschule Bern</a></p>
+          <p><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">Olan!</a> [0x01- ZH]</p>
+          <p><a href="https://soundcloud.com/polarstella" target="_blank" rel="noopener">stellab</a> b2b <a href="https://soundcloud.com/g-rtz-1" target="_blank" rel="noopener">zogreth</a> [<a href="https://www.instagram.com/vierzmr_" target="_blank" rel="noopener">vierzmr</a> - ZH]</p>
           <p>Electro / Techno / Rave</p>
           <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected.</p>
 

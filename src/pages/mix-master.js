@@ -8,7 +8,9 @@ import * as styles from "../components/index.module.css"
 const mixmasterPage = ({ data }) => (
   <Layout>
     <div className={styles.mainNormal}>
-      <h2 className={styles.h2heading}>Mixing and Mastering Services</h2>
+
+            {/* Mixing And Mastering */}
+      <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
       <div className="oz-wrapper-content">
         
         <div className="contentdiv">
@@ -19,12 +21,17 @@ const mixmasterPage = ({ data }) => (
                <div dangerouslySetInnerHTML={{ __html: data.wpPage.mixmaster.mixmastertextzwei }} />
         </div>
       
-      <div className="contentdiv">
+      <div className="contentdiv"> 
 
-      <h2 className={styles.h2heading}>Mastering</h2>
+            {/* Mastering */}
+      <h2 className={styles.h2heading}>{data.wpPage.mixmaster.masteringtitle}</h2>
         {data.allWpContentEmbed.edges.map(({node}) => (
 
-          node.embedFelder.place == "master" && (
+          /* find out the data type of node.embedFelder.place */
+
+
+
+          node.embedFelder.place.toString() === "master" && (
            
            <div key={node.id} role="listitem" className="embedElem">
                <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -37,10 +44,12 @@ const mixmasterPage = ({ data }) => (
 
         </div>
         <div className="contentdiv">
-          <h2 className={styles.h2heading}>Mixing</h2>
+
+            {/* Mixing g */}
+          <h2 className={styles.h2heading}>{data.wpPage.mixmaster.mixingtitle}</h2>
           {data.allWpContentEmbed.edges.map(({node}) => (
 
-            node.embedFelder.place == "mix" && (
+            node.embedFelder.place.toString() === "mix" && (
             
             <div key={node.id} role="listitem" className="embedElem">
                 <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -48,7 +57,7 @@ const mixmasterPage = ({ data }) => (
 
             )
 
-
+ 
             ))} 
 
         </div>
@@ -75,7 +84,10 @@ query  {
     }
   }
   wpPage(slug: {eq: "mixingmastering"}) {
+    title
     mixmaster {
+      mixingtitle
+      masteringtitle
       mixmastertext
       mixmastertextzwei
     }

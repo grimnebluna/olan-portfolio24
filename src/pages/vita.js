@@ -13,7 +13,7 @@ const vitaPage = ({ data }) => (
       <div className="oz-wrapper-content">
         
         <div className="contentdiv">
-          <h2 className={styles.h2heading}>About Olan!</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
 
            {/* instead of the nl trick, use dangerouslySetInnerHTML */}
             <div dangerouslySetInnerHTML={{ __html: data.wpPage.aboutcontact.about }} />
@@ -45,6 +45,7 @@ export const Head = () => <Seo title="About + Contact | Olan!" />
 export const query = graphql`
 query  {
   wpPage(slug: {eq: "aboutcontact"}) {
+    title
     aboutcontact {
       about
       contact

@@ -12,7 +12,9 @@ const soundtrackPage = ({ data }) => (
       <div className="oz-wrapper-content">
         
         <div className="zweispaltigWrapper">
-          <h2 className={styles.h2heading}>Scores</h2>
+
+            {/* Scores / Soundtrack */}
+          <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
             {/* embed disco again but with nl2br */}
                    <div className="contentdiv" dangerouslySetInnerHTML={{ __html: data.wpPage.soundtrack.soundtracktext }} />
 
@@ -20,14 +22,15 @@ const soundtrackPage = ({ data }) => (
       </div>
       <div className="contentdiv">
 
-      <h2 className={styles.h2heading}>Theater</h2>
+            {/* Theater */}
+      <h2 className={styles.h2heading}>{data.wpPage.soundtrack.theatertitle}</h2>
         {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
                 // Convert to date objects if needed, or handle your specific format
                 return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
               }).map(({node}) => (
 
-          node.embedFelder.place == "theater" && (
+          node.embedFelder.place.toString() === "theater" && (
            
            <div key={node.id} role="listitem" className="embedElem">
                <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -40,14 +43,16 @@ const soundtrackPage = ({ data }) => (
 
         </div>
         <div className="contentdiv">
-          <h2 className={styles.h2heading}>Film</h2>
+
+            {/* Film */}
+          <h2 className={styles.h2heading}>{data.wpPage.soundtrack.filmtitle}</h2>
           {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
                 // Convert to date objects if needed, or handle your specific format
                 return new Date(b.node.embedFelder.datum) - new Date(a.node.embedFelder.datum);
               }).map(({node}) => (
 
-            node.embedFelder.place == "film" && (
+            node.embedFelder.place.toString() === "film" && (
             
             <div key={node.id} role="listitem" className="embedElem">
                 <div dangerouslySetInnerHTML={{ __html: node.embedFelder.embedcode }} />
@@ -96,8 +101,11 @@ query  {
     }
   }
   wpPage(slug: {eq: "soundtrack"}) {
+    title
     soundtrack {
       soundtracktext
+      theatertitle
+      filmtitle
     }
   }
 }
