@@ -16,6 +16,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '3',
+        matomoUrl: 'https://tracking.x02.ch',
+        siteUrl: 'https://www.olan.tech',
+      }
+    },
+    {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "https://content.olan.tech/graphql",

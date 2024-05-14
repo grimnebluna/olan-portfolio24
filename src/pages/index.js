@@ -5,37 +5,72 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 
-/*
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+/* Popup component
+import { useState, useEffect } from 'react';
+const Popup = () => {
+  const [showPopup, setShowPopup] = useState(false);  // Used to mount/unmount the component
+  const [isVisible, setIsVisible] = useState(false);
+  const [opacity, setOpacity] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);  // State to track mouse hover
+  const [isClosing, setIsClosing] = useState(false); // State to manage
+
+  useEffect(() => {
+        if (document.cookie.split(';').some((item) => item.trim().startsWith('cookieAccepted='))) {
+          return; // Don't show the popup if cookie is set
+        }
+        if(isClosing) return;  // Don't show the popup if it's closing
+      // Simulate fetching cookie settings, etc.
+      setTimeout(() => {
+         setShowPopup(true);
+          setIsVisible(true);
+          setTimeout(() => setOpacity(1), 10); // small delay to ensure CSS is applied
+      }, 1000); // simulate delay
+
+      const timer = setTimeout(() => {
+        if (!isHovering && isVisible && !isClosing) {
+          handleClose(false);  // Not accepting, just closing
+        }
+      }, 6000);  // 1 second after it becomes fully visible (5 seconds waiting + 1 second initial delay)
+
+      return () => clearTimeout(timer);  // Clear timer on component unmount or cleanup
+  
+
+  }, [isHovering, isVisible, isClosing]);
+
+  const handleClose = (accept = false) => {
+    setTimeout(() => setIsClosing(true), 10); // small delay to ensure CSS is applied
+    if (accept) {
+      document.cookie = "cookieAccepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); // Set a cookie for 1 year
+  }
+      setOpacity(0); // Trigger fade-out   
+      setTimeout(() => {
+        setIsVisible(false);
+        setShowPopup(false);  // Ensure it won't be triggered again
+      }, 500);
+  };
+
+
+  if (!showPopup) {
+    return null;
+  }
+  return (
+      <div
+          className="cookie-notice"
+          onMouseEnter={() => setIsHovering(true)}  // Set hover state on mouse enter
+          onMouseLeave={() => setIsHovering(false)}  // Reset hover state on mouse leave
+          style={{
+              opacity: opacity,
+              transition: 'opacity 500ms ease-in-out',
+              visibility: opacity === 0 && !isVisible ? 'hidden' : 'visible'
+          }}
+      >   
+          <p>I use cookies to improve your experience :-* </p>
+          <button onClick={() => handleClose(true)}>Close</button>
+      </div>
+  );
+};
+
 */
-
-/* const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter` */
-
 const IndexPage = ({ data }) => (
   <Layout>
     <div className={styles.mainCenter}>
@@ -43,40 +78,11 @@ const IndexPage = ({ data }) => (
       <h1 className={styles.mainTitle}>{data.wpPage.title}</h1>
       <h2 className={styles.subTitle}>{data.wpPage.index.subtitle}</h2>
       <h2 className={styles.subSubTitle}>{data.wpPage.index.subsubtitle}</h2>
-      {/*
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      */}
-
-      {/* Additional content */}
-
-      {/*
-      <p>{data.wpPage.dates.hello}</p>
-      */}
+      
     </div>
-    {/*
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    */}
+    
     </div>
+    {/* <Popup /> */}
   </Layout>
 )
 
