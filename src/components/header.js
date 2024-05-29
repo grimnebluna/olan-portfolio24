@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
         />
       </a>
 */}
-    <a href="https://olan1.bandcamp.com/" target="_blank" className="social-link w-inline-block">
+    <a href="https://olan1.bandcamp.com/" target="_blank" className="social-link w-inline-block" aria-label="bandcamp">
     <StaticImage
         src="../images/bandcamp.svg"
         loading="eager"
@@ -29,7 +29,7 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
     </a>
-    <a href="https://soundcloud.com/olangalactica" target="_blank" className="social-link w-inline-block">
+    <a href="https://soundcloud.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="soundcloud">
     <StaticImage
         src="../images/soundcloud.svg"
         loading="eager"
@@ -39,7 +39,7 @@ const Header = ({ siteTitle }) => (
         alt=""
       />        
     </a>
-     <a href="https://instagram.com/olangalactica" target="_blank" className="social-link w-inline-block">
+     <a href="https://instagram.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="instagram">
      <StaticImage
         src="../images/instagram.svg"
         loading="eager"
@@ -49,7 +49,17 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
      </a>
-     <a href="https://www.youtube.com/olangalactica" target="_blank" className="social-link w-inline-block">
+     <a href="https://facebook.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="facebook">
+     <StaticImage
+        src="../images/facebook.svg"
+        loading="eager"
+        width={64}
+        quality={95}
+        formats={["auto", "webp", "avif"]}
+        alt=""
+      />
+     </a>
+     <a href="https://www.youtube.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="youtube">
      <StaticImage
         src="../images/youtube.svg"
         loading="eager"
@@ -59,9 +69,9 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
      </a>
-     <a href="https://facebook.com/olangalactica" target="_blank" className="social-link w-inline-block">
+     <a href="https://tiktok.com/@olangalactica" target="_blank" className="social-link w-inline-block" aria-label="tiktok">
      <StaticImage
-        src="../images/facebook.svg"
+        src="../images/tiktok.svg"
         loading="eager"
         width={64}
         quality={95}

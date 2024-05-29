@@ -69,6 +69,9 @@ const filteredAndSortedGigs = data.allWpGig.edges
       </div>
     ))}
 
+<p style={{marginTop: "20px"}}><a href="https://enl.band" target="_blank" rel="noopener">ENL gigs are on enl.band</a></p>
+
+
 
 
       </div>
