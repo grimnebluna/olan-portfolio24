@@ -29,16 +29,6 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
     </a>
-    <a href="https://soundcloud.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="soundcloud">
-    <StaticImage
-        src="../images/soundcloud.svg"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-      />        
-    </a>
      <a href="https://instagram.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="instagram">
      <StaticImage
         src="../images/instagram.svg"
@@ -79,6 +69,16 @@ const Header = ({ siteTitle }) => (
         alt=""
       />
      </a>
+     <a href="https://soundcloud.com/olangalactica" target="_blank" className="social-link w-inline-block" aria-label="soundcloud">
+    <StaticImage
+        src="../images/soundcloud.svg"
+        loading="eager"
+        width={64}
+        quality={95}
+        formats={["auto", "webp", "avif"]}
+        alt=""
+      />        
+    </a>
      </div>
     <HamburgerMenu />
 
