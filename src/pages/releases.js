@@ -11,8 +11,7 @@ const releasesPage = ({ data }) => (
     <div className={styles.mainNormal}>
       <div className="oz-wrapper-content">
         <div className="zweispaltigWrapper">
-          {/* Releases TODO */}
-      <h2 className={styles.h2heading}>Recent Releases</h2>
+      <h2 className={styles.h2heading}>{data.wpPage.discography.recentReleasesTitel}</h2>
         <div className="contenZweispaltigNoGap">
         {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
@@ -33,6 +32,7 @@ const releasesPage = ({ data }) => (
 
 
       </div>
+      {/*  TODO */}
         <p style={{marginTop: "20px", marginBottom: "0px"}}><a href="https://olan1.bandcamp.com" target="_blank" rel="noopener">more stuff on Bandcamp</a></p>
         <p><a href="https://0x01.space/releases" target="_blank" rel="noopener">more info on 0x01.space</a></p>
 
@@ -40,7 +40,7 @@ const releasesPage = ({ data }) => (
 
             {/* Full Discography */}
         <div className="zweispaltigWrapper">
-            <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
+            <h2 className={styles.h2heading}>{data.wpPage.discography.titelFullDiscography}</h2>
             <div className="content">
 
               
@@ -79,6 +79,8 @@ query  {
     title
     discography {
       disco
+      recentReleasesTitel
+      titelFullDiscography
     }
   }
   

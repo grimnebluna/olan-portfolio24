@@ -44,8 +44,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
         
         <div className="contentdiv">
 
-          {/* todo */}
-          <h2 className={styles.h2heading}>Dates</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelDates}</h2>
 
 
 
@@ -68,7 +67,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
         </div>
       </div>
     ))}
-
+          {/* todo */}
 <p style={{marginTop: "20px"}}><a href="https://enl.band" target="_blank" rel="noopener">ENL gigs are on enl.band</a></p>
 
 
@@ -76,8 +75,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
       </div>
       <div className="contentdiv">
-          {/* todo */}
-          <h2 className={styles.h2heading}>DJ</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelDj}</h2>
         {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
                 // Convert to date objects if needed, or handle your specific format
@@ -95,12 +93,12 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
       ))} 
 
+          {/* todo */}
           <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">more stuff on Soundcloud</a></p>
 
         </div>
       <div className="contentdiv">
-          {/* todo */}
-          <h2 className={styles.h2heading}>Producer</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelProducer}</h2>
           {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
                 // Convert to date objects if needed, or handle your specific format
@@ -118,11 +116,11 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
             ))} 
 
+          {/* todo */}
         <p style={{marginTop: "20px"}}><a href="https://olan1.bandcamp.com" target="_blank" rel="noopener">more stuff on Bandcamp</a></p>
         </div>
         <div className="contentdiv">
-          {/* todo */}
-          <h2 className={styles.h2heading}>Live Sets</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelLiveSets}</h2>
           {data.allWpContentEmbed.edges.sort((a, b) => {
                 // Assuming datum is in a format that can be compared directly, like YYYY-MM-DD
                 // Convert to date objects if needed, or handle your specific format
@@ -140,6 +138,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
             ))} 
 
+          {/* todo */}
         <p style={{marginTop: "20px"}}><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">more stuff on Soundcloud</a></p>
         </div>
 
@@ -148,7 +147,7 @@ const filteredAndSortedGigs = data.allWpGig.edges
 
 
       <div className="zweispaltigWrapper">
-          <h2 className={styles.h2heading}>{data.wpPage.title}</h2>
+          <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelGigHistory}</h2>
             <div dangerouslySetInnerHTML={{ __html: data.wpPage.historygigs.history }} />
       </div>
 
@@ -192,7 +191,11 @@ query  {
     title
     historygigs {
       history
-
+      titelDates
+      titelDj
+      titelLiveSets
+      titelProducer
+      titelGigHistory
     }
   }
 }
