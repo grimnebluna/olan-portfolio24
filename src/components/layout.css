@@ -808,6 +808,19 @@ h2 {
   opacity:1;
 }
 
+.embedElem h3 {
+margin-bottom:0px;
+}
+.embedElem h4 {
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+.embedElem h5 {
+  margin-top:0px;
+  margin-bottom:20px;
+}
+
 .cookie-notice {
 
   position: fixed;
