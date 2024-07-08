@@ -26,12 +26,13 @@ const vitaPage = ({ data }) => (
       </div>
       <div className="contentdiv">
       <StaticImage
-          src="../images/2023_012_007_HR.jpg"
+          src="../images/R1-08927-005A.jpeg"
           loading="eager"
           quality={95}
           formats={["auto", "webp", "avif"]}
           alt=""
         />
+        {/*<p style={{fontSize: "14px", textAlign: "right"}}>pic by <a href="https://instagram.com/niom.tv/" target="_blank" rel="noopener noreferrer">@niom.tv</a></p>*/}
 
         </div>
       </div>
