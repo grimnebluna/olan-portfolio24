@@ -18,7 +18,7 @@ const bubblesPage = ({ data }) => (
           <p><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">Olan!</a> [0x01- ZH]</p>
           <p><a href="https://soundcloud.com/polarstella" target="_blank" rel="noopener">stellab</a> b2b <a href="https://soundcloud.com/g-rtz-1" target="_blank" rel="noopener">zogreth</a> [<a href="https://www.instagram.com/vierzmr_" target="_blank" rel="noopener">vierzmr</a> - ZH]</p>
           <p>Electro / Techno / Rave</p>
-          <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected. </p>
+          <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected.</p>
 
 
       </div>

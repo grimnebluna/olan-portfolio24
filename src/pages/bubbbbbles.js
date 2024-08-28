@@ -19,7 +19,7 @@ const bubblesPage2 = ({ data }) => (
           <p>Bernet Branca [130bpm]</p>
           <p>DJ TBA</p>
           <p>Electro / House / Techno / Rave</p>
-          <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected. </p>
+          <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected.</p>
 
 
       </div>
