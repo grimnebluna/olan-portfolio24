@@ -85,8 +85,6 @@ const djPage = ({ data }) => {
                 </div>
               )
             ))}
-            {/* todo */}
-            <p style={{ marginTop: "20px" }}><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">more stuff on Soundcloud</a></p>
           </div>
           <div className="contentdiv">
             <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelProducer}</h2>
@@ -101,8 +99,6 @@ const djPage = ({ data }) => {
                 </div>
               )
             ))}
-            {/* todo */}
-            <p style={{ marginTop: "20px" }}><a href="https://olan1.bandcamp.com" target="_blank" rel="noopener">more stuff on Bandcamp</a></p>
           </div>
           <div className="contentdiv">
             <h2 className={styles.h2heading}>{data.wpPage.historygigs.titelLiveSets}</h2>
@@ -117,8 +113,6 @@ const djPage = ({ data }) => {
                 </div>
               )
             ))}
-            {/* todo */}
-            <p style={{ marginTop: "20px" }}><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">more stuff on Soundcloud</a></p>
           </div>
         </div>
         <div className="zweispaltigWrapper">

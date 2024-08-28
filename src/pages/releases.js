@@ -32,9 +32,7 @@ const releasesPage = ({ data }) => (
 
 
       </div>
-      {/*  TODO */}
-        <p style={{marginTop: "20px", marginBottom: "0px"}}><a href="https://olan1.bandcamp.com" target="_blank" rel="noopener">more stuff on Bandcamp</a></p>
-        <p><a href="https://0x01.space/releases" target="_blank" rel="noopener">more info on 0x01.space</a></p>
+
 
         </div>
 
