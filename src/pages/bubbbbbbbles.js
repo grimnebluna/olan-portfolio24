@@ -17,7 +17,6 @@ const bubblesPage2 = ({ data }) => (
           <p>Fri 31st January 2024, <a href="https://cafete.ch/" target="_blank" rel="noopener">Cafete Reitschule Bern</a></p>
           <p><a href="https://soundcloud.com/mean-girlzz-mean-girlz" target="_blank" rel="noopener">Meangirlz</a> [ZH]</p>
           <p><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">Olan!</a> [0x01 - ZH]</p>
-          <p>Mene [ZH]</p>
           <p>Electro / Techno / Rave / Breaks</p>
           <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected.</p>
 
