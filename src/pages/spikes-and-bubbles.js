@@ -13,18 +13,18 @@ const bubblesPage2 = ({ data }) => (
       <div className="oz-wrapper-content">
         
         <div className="contentdiv">
-          <h2 className={styles.h2heading}>Bubbbbbles #3</h2>
-          <p>Fri 31st January 2024, <a href="https://cafete.ch/" target="_blank" rel="noopener">Cafete Reitschule Bern</a></p>
-          <p><a href="https://soundcloud.com/mean-girlzz-mean-girlz" target="_blank" rel="noopener">Meangirlz</a> [ZH]</p>
-          <p><a href="https://soundcloud.com/olangalactica" target="_blank" rel="noopener">Olan!</a> [0x01 - ZH]</p>
-          <p>Electro / Techno / Rave / Breaks</p>
-          <p>With the Bubbbbbles Party, Olan! brings their favorite DJs from their bubble to Bern. High-quality baller music is to be expected.</p>
+          <h2 className={styles.h2heading}>Spikes & Bubbles</h2>
+          <p>release date: 30 dec 2024 on <a href="https://deedeespicks.bandcamp.com/" target="_blank" rel="noopener">Dee Dee's picks</a></p>
+          <a href="https://deedeespicks.bandcamp.com/album/ddp016-spikes-bubbles" target="_blank" rel="noopener" class="buybtn button">Bandcamp</a>
+          <a href="https://www.youtube.com/watch?v=GxiaOtEY-gA&list=OLAK5uy_nb0dxKoMifEyWmUuDGmqtJy-8nP_K8d_8" target="_blank" rel="noopener" class="buybtn button">Youtube</a>
+          <a href="https://music.apple.com/ch/album/spikes-bubbles/1782295722" target="_blank" rel="noopener" class="buybtn button">Apple Music</a>
+          <a href="https://open.spotify.com/album/0W7SEu7fBslr5WRLCqKORg?si=SfkEm9HeQhi0hzrXzvr7rA" target="_blank" rel="noopener" class="buybtn button">Spotify</a>
 
-
+          
       </div>
       <div className="contentdiv">
       <StaticImage
-          src="../images/250131_bubbbbbles3-insta.webp"
+          src="../images/cover-comp.webp"
           loading="eager"
           quality={95}
           formats={["auto", "webp", "avif"]}
