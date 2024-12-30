@@ -38,7 +38,7 @@ const bubblesPage2 = ({ data }) => (
   </Layout>
 )
 
-export const Head = () => <Seo title="About + Contact | Olan!" />
+export const Head = () => <Seo title="Bubbbbbles #3 | Olan!" />
 
 export const query = graphql`
 query  {
